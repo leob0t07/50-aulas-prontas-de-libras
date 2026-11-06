@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Young Serif", Georgia, serif;
+  --font-sans: "Figtree", system-ui, -apple-system, sans-serif;
+  --color-papel: #FAF6EE;
+  --color-papel-alt: #F1EADB;
+  --color-tinta: #1B2A41;
+  --color-coral: #E0603A;
+  --color-mostarda: #E8B84A;
+  --color-verde: #3F7D5A;
+}
+
+html {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body {
+  font-family: "Figtree", system-ui, -apple-system, sans-serif;
+  background-color: #FAF6EE;
+  color: #1B2A41;
+  font-size: 16px;
+  line-height: 1.55;
+  overflow-x: hidden;
+  max-width: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (min-width: 640px) {
+  body {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+}
+
+button, a {
+  touch-action: manipulation;
+}
+
+/* Marca-texto amarelo estilo feito à mão */
+.highlight-pen {
+  background: linear-gradient(104deg, rgba(232, 184, 74, 0.1) 0.9%, rgba(232, 184, 74, 0.45) 2.4%, rgba(232, 184, 74, 0.48) 98%, rgba(232, 184, 74, 0.1) 99.5%);
+  padding: 0.1em 0.22em;
+  border-radius: 2px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* Sombra seca estilo sticker */
+.shadow-sticker {
+  box-shadow: 3px 3px 0 #1B2A41;
+}
+
+.shadow-sticker-light {
+  box-shadow: 3px 3px 0 rgba(250, 246, 238, 0.7);
+}
+
+.shadow-sticker-lg {
+  box-shadow: 5px 5px 0 #1B2A41;
+}
+
+/* Linha pontilhada no estilo sumário editorial */
+.dot-leader {
+  flex-grow: 1;
+  border-bottom: 2px dotted rgba(27, 42, 65, 0.25);
+  margin: 0 10px;
+  position: relative;
+  top: -4px;
+}

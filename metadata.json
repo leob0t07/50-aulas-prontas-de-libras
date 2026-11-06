@@ -1,0 +1,6 @@
+{
+  "name": "50 Aulas Prontas de Libras",
+  "description": "Landing page de alta conversão para o material didático imprimível 50 Aulas Prontas de Libras.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
