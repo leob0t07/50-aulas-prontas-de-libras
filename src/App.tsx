@@ -13,7 +13,7 @@ import headerMockup from './images/header libras.jpg';
    ========================================================================== */
 export const CONFIG = {
   // Links de checkout para onde o comprador será redirecionado
-  checkoutEssencial: 'https://pay.cakto.com.br/35x5cz8',
+  checkoutEssencial: 'https://pay.cakto.com.br/ppksmum_1287004',
   checkoutCompleto: 'https://pay.cakto.com.br/35x5cz8',
 
   // Imagem principal do produto no topo (Hero)
@@ -610,131 +610,156 @@ export default function App() {
           className="bg-[#1B2A41] text-[#FAF6EE] py-14 sm:py-[72px] md:py-[112px] px-4 sm:px-6 scroll-mt-4"
         >
           <div className="max-w-4xl mx-auto">
-            <h2 className="font-['Young_Serif',serif] text-[1.45rem] sm:text-3xl md:text-4xl text-[#FAF6EE] leading-tight text-left mb-8 sm:mb-10">
+            {/* TÍTULO DA SEÇÃO */}
+            <h2 className="font-['Young_Serif',serif] text-[1.45rem] sm:text-3xl md:text-4xl text-[#FAF6EE] leading-tight text-center mb-8 sm:mb-10">
               Escolha como quer começar.
             </h2>
 
-            {/* Grid dos dois planos: no mobile o COMPLETO vem PRIMEIRO conforme especificação */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-stretch">
-              {/* PLANO COMPLETO (Destaque - Primeiro no Mobile via order-1 md:order-2) */}
-              <div className="order-1 md:order-2 relative bg-[#FAF6EE] text-[#1B2A41] p-5 sm:p-8 rounded-[6px] border-2 border-[#1B2A41] shadow-sticker-lg flex flex-col justify-between">
-                {/* Selo Mostarda Inclinado: Mais escolhido */}
-                <div
-                  className="absolute -top-3 right-3 sm:right-4 bg-[#E8B84A] text-[#1B2A41] text-[11px] sm:text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-[4px] border border-[#1B2A41] rotate-[2deg] sm:rotate-[3deg] shadow-sticker"
-                  aria-label="Plano mais escolhido"
+            {/* CARTÃO PRINCIPAL */}
+            <div className="relative bg-[#FAF6EE] text-[#1B2A41] p-5 sm:p-7 rounded-[6px] border-2 border-[#1B2A41] shadow-[4px_4px_0px_#E0603A] max-w-[420px] mx-auto text-left">
+              {/* Selo mostarda no topo, levemente inclinado */}
+              <div
+                className="absolute -top-3 right-4 bg-[#E8B84A] text-[#1B2A41] text-[11px] sm:text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-[4px] border border-[#1B2A41] rotate-[2deg] shadow-sticker"
+                aria-label="Plano mais escolhido"
+              >
+                Mais escolhido
+              </div>
+
+              {/* Nome em serifa bold */}
+              <h3 className="font-['Young_Serif',serif] font-bold text-2xl sm:text-3xl text-[#1B2A41] mb-1">
+                Aulas + Bônus
+              </h3>
+
+              {/* Preço grande em serifa bold + pequeno ao lado */}
+              <div className="flex items-baseline gap-2 mb-1">
+                <span className="font-['Young_Serif',serif] font-bold text-3xl sm:text-4xl text-[#1B2A41]">
+                  R$ 19,90
+                </span>
+                <span className="text-xs sm:text-sm text-[#1B2A41]/75 font-medium">
+                  pagamento único
+                </span>
+              </div>
+
+              {/* Linha menor */}
+              <p className="text-xs sm:text-sm text-[#1B2A41]/80 mb-5 pb-4 border-b border-[#1B2A41]/15 font-medium">
+                Por menos de R$ 0,40 por aula.
+              </p>
+
+              {/* Subtítulo */}
+              <h4 className="text-xs font-bold uppercase tracking-wider text-[#1B2A41]/70 mb-3.5">
+                O que você recebe
+              </h4>
+
+              {/* Lista de 5 itens com miniatura quadrada de 40px e check verde em SVG */}
+              <ul className="space-y-3 mb-6 text-left">
+                {[
+                  '50 aulas de Libras em PDF, 10 temas × 5 aulas',
+                  'Versão para imprimir, com fundo limpo',
+                  'Bônus 1: Alfabeto Manual para colar na parede',
+                  'Bônus 2: 30 cartelas de sinais para jogo de memória',
+                  'Sinais ilustrados, atividade e dinâmica em grupo em cada aula',
+                ].map((item, index) => (
+                  <li key={index} className="flex items-center gap-3">
+                    {/* ===================================================================
+                        [MINIATURA 40px]
+                        Placeholder cinza-claro. Para trocar pela imagem real, substitua
+                        a <div> abaixo por:
+                        <img
+                          src={`/caminho-da-sua-miniatura-${index + 1}.jpg`}
+                          alt={item}
+                          className="w-10 h-10 rounded-[4px] object-cover border border-[#1B2A41]/20 shrink-0"
+                        />
+                        =================================================================== */}
+                    <div
+                      className="w-10 h-10 rounded-[4px] bg-[#E5E0D8] border border-[#1B2A41]/20 shrink-0 flex items-center justify-center text-[11px] text-[#1B2A41]/60 font-semibold"
+                      aria-hidden="true"
+                    >
+                      <span className="font-mono text-[11px] text-[#1B2A41]/50 font-bold">
+                        0{index + 1}
+                      </span>
+                    </div>
+
+                    <div className="flex items-start gap-2 flex-1 min-w-0">
+                      <span className="mt-0.5 shrink-0">
+                        <CheckIcon className="w-4 h-4 text-[#3F7D5A]" />
+                      </span>
+                      <span className="text-[13px] sm:text-[14px] text-[#1B2A41] leading-snug font-medium">
+                        {item}
+                      </span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Botão coral, largura total, texto branco bold */}
+              <div>
+                <a
+                  href={CONFIG.checkoutCompleto}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackInitiateCheckout('Aulas + Bônus - 50 Aulas Prontas de Libras', 19.90)}
+                  className="w-full inline-flex items-center justify-center bg-[#E0603A] hover:bg-[#cf5430] text-white text-[15px] sm:text-base font-bold min-h-[50px] py-3.5 px-4 rounded-[6px] shadow-sticker transition cursor-pointer text-center focus:outline-none focus:ring-2 focus:ring-[#1B2A41] focus:ring-offset-2 active:translate-x-[2px] active:translate-y-[2px]"
                 >
-                  Mais escolhido
-                </div>
-
-                <div>
-                  <div className="mb-3 sm:mb-4">
-                    <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#E0603A]">
-                      COMPLETO
-                    </span>
-                    <h3 className="font-['Young_Serif',serif] text-2xl sm:text-3xl text-[#1B2A41] mt-0.5 sm:mt-1">
-                      Plano Completo
-                    </h3>
-                  </div>
-
-                  <div className="mb-5 sm:mb-6 pb-4 sm:pb-5 border-b border-[#1B2A41]/15">
-                    <div className="font-['Young_Serif',serif] text-3xl sm:text-4xl text-[#1B2A41]">
-                      R$ 19,90
-                    </div>
-                    <span className="text-xs sm:text-sm text-[#1B2A41]/75 font-medium">
-                      pagamento único
-                    </span>
-                  </div>
-
-                  <ul className="space-y-2.5 sm:space-y-3 mb-6 sm:mb-8 text-left text-[14px] sm:text-base">
-                    {[
-                      'Tudo do Plano Essencial, mais:',
-                      'Versão para imprimir (fundo limpo, economiza tinta)',
-                      'Bônus 1: Alfabeto Manual Ilustrado para colar na parede',
-                      'Bônus 2: 30 cartelas de sinais para jogo de memória',
-                      'Garantia de 7 dias',
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-2.5">
-                        <span className="mt-0.5 shrink-0">
-                          <CheckIcon className="w-4 h-4" />
-                        </span>
-                        <span className={i === 0 ? 'font-bold' : ''}>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <a
-                    href={CONFIG.checkoutCompleto}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => trackInitiateCheckout('Plano Completo - 50 Aulas Prontas de Libras', 19.90)}
-                    className="w-full inline-flex items-center justify-center bg-[#E0603A] hover:bg-[#cf5430] text-white text-base sm:text-lg font-bold min-h-[50px] px-5 py-3.5 rounded-[6px] shadow-sticker transition cursor-pointer text-center focus:outline-none focus:ring-2 focus:ring-[#1B2A41] focus:ring-offset-2 active:translate-x-[2px] active:translate-y-[2px]"
-                  >
-                    Quero o Completo · R$ 19,90
-                  </a>
-                </div>
+                  Quero as aulas + bônus · R$ 19,90
+                </a>
               </div>
 
-              {/* PLANO ESSENCIAL (Segundo no Mobile via order-2 md:order-1) */}
-              <div className="order-2 md:order-1 bg-transparent border-2 border-[#FAF6EE]/40 text-[#FAF6EE] p-5 sm:p-8 rounded-[6px] flex flex-col justify-between">
-                <div>
-                  <div className="mb-3 sm:mb-4">
-                    <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#FAF6EE]/70">
-                      BÁSICO
-                    </span>
-                    <h3 className="font-['Young_Serif',serif] text-2xl sm:text-3xl text-[#FAF6EE] mt-0.5 sm:mt-1">
-                      Plano Essencial
-                    </h3>
-                  </div>
-
-                  <div className="mb-5 sm:mb-6 pb-4 sm:pb-5 border-b border-[#FAF6EE]/20">
-                    <div className="font-['Young_Serif',serif] text-3xl sm:text-4xl text-[#FAF6EE]">
-                      R$ 9,90
-                    </div>
-                    <span className="text-xs sm:text-sm text-[#FAF6EE]/75 font-medium">
-                      pagamento único
-                    </span>
-                  </div>
-
-                  <ul className="space-y-2.5 sm:space-y-3 mb-6 sm:mb-8 text-left text-[14px] sm:text-base text-[#FAF6EE]/90">
-                    {[
-                      '50 aulas completas de Libras em PDF',
-                      '10 blocos temáticos, 5 aulas cada',
-                      'Sinais ilustrados e atividade prática em cada aula',
-                      'Sugestão de dinâmica em grupo por aula',
-                      'Formato A4: use na tela ou imprima',
-                      'Entrega imediata por e-mail',
-                      'Garantia de 7 dias',
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-2.5">
-                        <span className="mt-0.5 shrink-0">
-                          <CheckIcon className="w-4 h-4 text-[#88C59F]" />
-                        </span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <a
-                    href={CONFIG.checkoutEssencial}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => trackInitiateCheckout('Plano Essencial - 50 Aulas Prontas de Libras', 9.90)}
-                    className="w-full inline-flex items-center justify-center bg-transparent hover:bg-[#FAF6EE]/10 text-[#FAF6EE] border-2 border-[#FAF6EE] text-base sm:text-lg font-bold min-h-[50px] px-5 py-3.5 rounded-[6px] transition cursor-pointer text-center focus:outline-none focus:ring-2 focus:ring-[#FAF6EE] focus:ring-offset-2 active:translate-x-[2px] active:translate-y-[2px]"
-                  >
-                    Quero o Essencial · R$ 9,90
-                  </a>
-                </div>
-              </div>
+              {/* Texto pequeno centralizado abaixo do botão */}
+              <p className="text-[11px] sm:text-xs text-[#1B2A41]/75 text-center mt-3 tracking-normal leading-normal">
+                Pagamento único · Entrega imediata no e-mail · Garantia de 7 dias
+              </p>
             </div>
 
-            {/* Microcopy abaixo dos dois planos */}
-            <p className="text-xs sm:text-sm text-[#FAF6EE]/75 text-center mt-6 sm:mt-8 tracking-normal sm:tracking-wide leading-relaxed">
-              Por menos de R$ 0,40 por aula, você tem material pronto para o semestre inteiro.
-            </p>
+            {/* CARTÃO SECUNDÁRIO (Plano de R$ 9,90) */}
+            <div className="mt-6 sm:mt-7 bg-[#FAF6EE]/10 border-2 border-[#FAF6EE]/40 text-[#FAF6EE] p-5 sm:p-6 rounded-[6px] max-w-[420px] mx-auto text-left">
+              <div className="flex items-baseline justify-between gap-3 mb-2">
+                <div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#FAF6EE]/70">
+                    OPÇÃO BÁSICA
+                  </span>
+                  <h4 className="font-['Young_Serif',serif] font-bold text-xl sm:text-2xl text-[#FAF6EE]">
+                    Só as 50 Aulas
+                  </h4>
+                </div>
+                <div className="text-right">
+                  <div className="font-['Young_Serif',serif] font-bold text-2xl sm:text-3xl text-[#FAF6EE]">
+                    R$ 9,90
+                  </div>
+                  <span className="text-[11px] text-[#FAF6EE]/75 font-medium block">
+                    pagamento único
+                  </span>
+                </div>
+              </div>
+
+              <p className="text-[14px] sm:text-[15px] text-[#FAF6EE]/90 mb-4 leading-relaxed">
+                Prefere só as 50 aulas, sem os bônus e sem a versão para imprimir?
+              </p>
+
+              <ul className="space-y-2 mb-5 text-[13px] sm:text-[14px] text-[#FAF6EE]/85">
+                <li className="flex items-start gap-2">
+                  <CheckIcon className="w-4 h-4 text-[#88C59F] mt-0.5 shrink-0" />
+                  <span>50 aulas de Libras em PDF (10 temas × 5 aulas)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckIcon className="w-4 h-4 text-[#88C59F] mt-0.5 shrink-0" />
+                  <span>Sinais ilustrados, atividade e dinâmica em grupo</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckIcon className="w-4 h-4 text-[#88C59F] mt-0.5 shrink-0" />
+                  <span>Entrega imediata no e-mail · Garantia de 7 dias</span>
+                </li>
+              </ul>
+
+              <a
+                href={CONFIG.checkoutEssencial}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackInitiateCheckout('Plano Essencial - 50 Aulas Prontas de Libras', 9.90)}
+                className="w-full inline-flex items-center justify-center bg-transparent hover:bg-[#FAF6EE]/15 text-[#FAF6EE] border-2 border-[#FAF6EE] text-[15px] sm:text-base font-bold min-h-[48px] py-3 px-4 rounded-[6px] transition cursor-pointer text-center focus:outline-none focus:ring-2 focus:ring-[#FAF6EE] focus:ring-offset-2 active:translate-x-[2px] active:translate-y-[2px]"
+              >
+                Quero só as aulas · R$ 9,90
+              </a>
+            </div>
           </div>
         </section>
 
