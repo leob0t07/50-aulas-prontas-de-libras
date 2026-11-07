@@ -5,6 +5,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import instructorPhoto from './images/Woman_teaching_Brazilian_Sign_La_cb978dc0_2K-optimized-261105171825_FileVert.jpg';
+import headerMockup from './images/header libras.jpg';
 
 /* ==========================================================================
    CONFIGURAÇÃO DA LANDING PAGE
@@ -14,6 +15,9 @@ export const CONFIG = {
   // Links de checkout para onde o comprador será redirecionado
   checkoutEssencial: 'https://pay.cakto.com.br/35x5cz8',
   checkoutCompleto: 'https://pay.cakto.com.br/35x5cz8',
+
+  // Imagem principal do produto no topo (Hero)
+  imagemHero: headerMockup,
 
   // Foto, dados do professor / autor / instituição (Seção 6)
   fotoInstrutora: instructorPhoto,
@@ -212,127 +216,46 @@ export default function App() {
             ================================================================== */}
         <section
           ref={heroRef}
-          className="pt-8 pb-12 sm:pt-14 sm:pb-20 md:pt-20 md:pb-24 px-4 sm:px-6 max-w-5xl mx-auto"
+          className="pt-8 pb-12 sm:pt-12 sm:pb-16 md:pt-16 md:pb-20 px-4 sm:px-6 max-w-[680px] mx-auto text-left"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Coluna de Texto (Mobile-first, alinhado à esquerda) */}
-            <div className="lg:col-span-7 text-left max-w-[640px] mx-auto lg:mx-0 w-full">
-              <h1 className="font-['Young_Serif',serif] text-[1.95rem] leading-[1.12] sm:text-4xl md:text-5xl lg:text-[3.25rem] text-[#1B2A41] tracking-tight mb-3 sm:mb-4">
-                50 Aulas Prontas de Libras
-              </h1>
+          {/* TÍTULO PRINCIPAL (H1) */}
+          <h1 className="font-['Young_Serif',serif] text-[1.95rem] leading-[1.12] sm:text-4xl md:text-5xl lg:text-[3.25rem] text-[#1B2A41] tracking-tight mb-4 sm:mb-6">
+            50 Aulas Prontas de Libras
+          </h1>
 
-              <h2 className="font-['Young_Serif',serif] text-[1.2rem] sm:text-2xl md:text-[1.65rem] leading-snug text-[#1B2A41] mb-4 sm:mb-5 font-normal">
-                <span className="highlight-pen">Abra, imprima e ensine</span>. Sem montar aula do zero toda semana.
-              </h2>
+          {/* IMAGEM DO PRODUTO (abaixo do título e acima da subheadline) */}
+          <div className="my-5 sm:my-7">
+            <img
+              src={CONFIG.imagemHero}
+              alt="50 Aulas Prontas de Libras - Material completo impresso e digital"
+              className="w-full h-auto rounded-[6px] border-2 border-[#1B2A41] shadow-sticker-lg"
+              loading="eager"
+            />
+          </div>
 
-              <p className="text-[#1B2A41]/85 text-[15px] sm:text-lg leading-relaxed mb-6 sm:mb-7">
-                Sinais organizados por tema, atividade prática e dinâmica de grupo em cada aula. Você escolhe o tema, imprime e entra na sala com a aula pronta.
-              </p>
+          {/* SUBHEADLINE (H2) */}
+          <h2 className="font-['Young_Serif',serif] text-[1.2rem] sm:text-2xl md:text-[1.65rem] leading-snug text-[#1B2A41] mb-4 sm:mb-5 font-normal">
+            <span className="highlight-pen">Abra, imprima e ensine</span>. Sem montar aula do zero toda semana.
+          </h2>
 
-              <div>
-                <button
-                  type="button"
-                  onClick={scrollToPlanos}
-                  className="w-full sm:w-auto inline-flex items-center justify-center bg-[#E0603A] hover:bg-[#cf5430] text-white text-base sm:text-lg font-bold min-h-[50px] px-7 py-3.5 rounded-[6px] shadow-sticker transition cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#1B2A41] focus:ring-offset-2 active:translate-x-[2px] active:translate-y-[2px]"
-                >
-                  Quero as 50 aulas
-                </button>
+          {/* PARÁGRAFO */}
+          <p className="text-[#1B2A41]/85 text-[15px] sm:text-lg leading-relaxed mb-6 sm:mb-7">
+            Sinais organizados por tema, atividade prática e dinâmica de grupo em cada aula. Você escolhe o tema, imprime e entra na sala com a aula pronta.
+          </p>
 
-                <p className="text-xs sm:text-sm text-[#1B2A41]/75 mt-2.5 sm:mt-3 tracking-normal leading-normal">
-                  A partir de R$ 9,90 · Pagamento único · Acesso imediato no e-mail
-                </p>
-              </div>
-            </div>
+          {/* BOTÃO E MICROCOPY */}
+          <div>
+            <button
+              type="button"
+              onClick={scrollToPlanos}
+              className="w-full sm:w-auto inline-flex items-center justify-center bg-[#E0603A] hover:bg-[#cf5430] text-white text-base sm:text-lg font-bold min-h-[50px] px-7 py-3.5 rounded-[6px] shadow-sticker transition cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#1B2A41] focus:ring-offset-2 active:translate-x-[2px] active:translate-y-[2px]"
+            >
+              Quero as 50 aulas
+            </button>
 
-            {/* Coluna do Mockup Visual de Folha Impressa (HTML/CSS Puro, escalável para mobile) */}
-            <div className="lg:col-span-5 flex justify-center items-center pt-4 sm:pt-4 w-full">
-              {/* ===================================================================
-                  [MOCKUP HERO EDITÁVEL]
-                  Se você preferir substituir este mockup artesanal de folha impressa
-                  por uma foto ou imagem real da apostila, troque o bloco abaixo por:
-                  
-                  <img
-                    src="/foto-apostila.jpg"
-                    alt="Apostila física 50 Aulas Prontas de Libras"
-                    className="w-full max-w-[340px] rounded-[6px] shadow-sticker border border-[#1B2A41]/20"
-                  />
-                  =================================================================== */}
-              <div
-                className="relative w-full max-w-[290px] xs:max-w-[320px] sm:max-w-[350px] mx-auto select-none"
-                aria-label="Representação visual da apostila impressa de Libras"
-              >
-                {/* Folha traseira inclinada */}
-                <div
-                  className="absolute inset-0 bg-[#F1EADB] border border-[#1B2A41]/20 rounded-[6px] shadow-sticker rotate-[1.5deg] sm:rotate-[3deg] translate-x-1 sm:translate-x-2 translate-y-1 sm:translate-y-2 pointer-events-none"
-                  aria-hidden="true"
-                />
-
-                {/* Folha frontal inclinada */}
-                <div className="relative bg-[#FFFFFF] border-2 border-[#1B2A41] rounded-[6px] shadow-sticker-lg p-4 sm:p-6 rotate-[-1deg] sm:rotate-[-2deg] text-[#1B2A41]">
-                  {/* Cabeçalho da folha tipo ficha escolar */}
-                  <div className="border-b-2 border-[#1B2A41] pb-2.5 sm:pb-3 mb-3 sm:mb-4">
-                    <div className="flex justify-between items-baseline mb-1">
-                      <span className="font-['Young_Serif',serif] text-base sm:text-lg text-[#1B2A41]">
-                        Aula 03 · Família
-                      </span>
-                      <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-[#1B2A41]/60">
-                        Nível 1
-                      </span>
-                    </div>
-                    <div className="text-[10px] sm:text-[11px] text-[#1B2A41]/70 flex justify-between">
-                      <span>Tema: Vínculos em Libras</span>
-                      <span>50 Aulas Prontas</span>
-                    </div>
-                  </div>
-
-                  {/* Grade de quadros com sinais ilustrados (Mãe, Pai, Irmão, Avó) */}
-                  <div className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#1B2A41]/70 mb-2">
-                    Vocabulário e Sinais
-                  </div>
-                  <div className="grid grid-cols-2 gap-2 sm:gap-2.5 mb-3 sm:mb-4">
-                    {[
-                      { nome: 'Mãe', sinal: 'Mão em B tocando a bochecha e benção' },
-                      { nome: 'Pai', sinal: 'Sinal de benção e carinho no queixo' },
-                      { nome: 'Irmão', sinal: 'Dedos indicadores unidos lado a lado' },
-                      { nome: 'Avó', sinal: 'Sinal de mãe seguido da mão trêmula' },
-                    ].map((item, i) => (
-                      <div
-                        key={i}
-                        className="border border-[#1B2A41]/30 rounded-[4px] p-1.5 sm:p-2 bg-[#FAF6EE]/50 flex flex-col items-center justify-center min-h-[64px] sm:min-h-[72px] text-center"
-                      >
-                        {/* Desenho estilizado de mão / configuração de sinal */}
-                        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded border border-dashed border-[#1B2A41]/40 flex items-center justify-center mb-1 bg-white">
-                          <svg
-                            className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#1B2A41]/70"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            aria-hidden="true"
-                          >
-                            <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0" />
-                            <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2" />
-                            <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8" />
-                            <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15" />
-                          </svg>
-                        </div>
-                        <span className="font-bold text-[11px] sm:text-xs text-[#1B2A41]">{item.nome}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Linha de atividade estilo caderno no rodapé da folha */}
-                  <div className="border-t border-[#1B2A41]/20 pt-2.5 sm:pt-3">
-                    <div className="text-[10px] sm:text-[11px] font-bold text-[#E0603A] mb-0.5 sm:mb-1">
-                      Atividade Prática 03:
-                    </div>
-                    <p className="text-[10px] sm:text-[11px] text-[#1B2A41]/80 leading-snug">
-                      Apresentação da árvore genealógica em duplas usando os 4 sinais aprendidos.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <p className="text-xs sm:text-sm text-[#1B2A41]/75 mt-2.5 sm:mt-3 tracking-normal leading-normal">
+              A partir de R$ 9,90 · Pagamento único · Acesso imediato no e-mail
+            </p>
           </div>
         </section>
 
